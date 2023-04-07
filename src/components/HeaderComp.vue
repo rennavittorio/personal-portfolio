@@ -29,7 +29,8 @@ export default defineComponent({
         }
     },
     mounted(){
-        this.setRoles();
+        // this.setRoles();
+        //stopped for now
     }
 })
 
@@ -40,15 +41,18 @@ export default defineComponent({
 
 <template>
 
-    <header class="header text-xl">
-        <h1 class="my-name">
-            hi, i'm <strong>{{ profileName }}</strong>
-        </h1>
-        <h1 class="my-roles flex justify-start items-center">
-            <span class="shrink-0"></span>i'm a 
-            <span class="dev-animation flicker"><strong>{{ roles[rolesCounter] }}</strong></span> 
-            <span class="">developer</span>
-        </h1>
+    <header class="header text-xl mb-3">
+        <div class="container">
+            <h1 class="my-name">
+                hi, i'm <strong>{{ profileName }}</strong>
+            </h1>
+            <h1 class="my-roles flex justify-start items-center">
+                <span class="shrink-0"></span>i'm a 
+                <span class="dev-animation flicker"><strong>{{ roles[rolesCounter] }}</strong></span> 
+                <span class="">developer</span>
+            </h1>
+
+        </div>
     </header>
 
 </template>
@@ -57,7 +61,7 @@ export default defineComponent({
 
 <style scoped>
 .header {
-    border: 1px dashed red;
+    /* border: 1px dashed red; */
 }
 
 .dev-animation {
@@ -65,9 +69,10 @@ export default defineComponent({
     white-space: nowrap; 
     margin: 0 5px; 
     letter-spacing: .01em; 
-    animation: 
+    /* animation: 
         typing 8s steps(5, end) infinite,
-        blink-caret 1s step-end infinite;
+        blink-caret 1s step-end infinite; */
+    /* stopped for now  */
 }
 
 .flicker {
