@@ -1,5 +1,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
+import store from '../store.js';
 
 export default defineComponent({
     props: {
@@ -9,11 +10,7 @@ export default defineComponent({
     },
     data(){
         return {
-            functionMenu: [
-                'knowMyStack()', 
-                'seeMyProjects()', 
-                'getInTouch()'
-            ],
+            store,
             activeIndex: 0,
             isActive: false,
         }
@@ -45,13 +42,13 @@ export default defineComponent({
 
         <ul class="list__functions h-[100%] flex flex-col">
             <li
-            v-for="(item, i) in functionMenu"
+            v-for="(item, i) in store.functionMenu"
             @click="toggleActive(i)"
             :class="['item__function', 'p-1',
             (activeIndex === i) && (isActive) ? 'active' : '',
             (activeIndex === i) && (isActive) ? 'mb-auto' : '',]">
                 <div class="item__title hover:underline hover:cursor-pointer">
-                    {{ item }}
+                    {{ item.title }}
                 </div>
                 <div 
                 :class="['content', 'p-2', (activeIndex === i) && (isActive) ? 'block' : 'hidden']">
