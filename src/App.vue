@@ -3,12 +3,18 @@
 import HeaderComp from './components/HeaderComp.vue';
 import MainComp from './components/MainComp.vue';
 import FooterComp from './components/FooterComp.vue';
+import store from './store.js';
 
 export default {
   components: {
     HeaderComp,
     MainComp,
     FooterComp
+  },
+  data(){
+    return {
+      store,
+    }
   }
 }
 
@@ -16,19 +22,29 @@ export default {
 
 <template>
 
-  <div class="page-site font-cascadia bg-main-bg-light text-main-tx-light text-[0.75rem] tracking-tigher
-  flex flex-col">
+  <div :class="['page-site', 'font-cascadia', 
+  store.mode===0?['bg-main-bg-light', 'text-main-tx-light']:['bg-main-bg-dark', 'text-main-tx-dark'], 'tracking-tigher',
+  'flex', 'flex-col']">
       
     <HeaderComp 
-    class=""
+    :class="[store.textSize === 'lg'?'text-[20px]':'',
+    store.textSize === 'md'?'text-[16px]':'',
+    store.textSize === 'sm'?'text-[12px]':'',
+    ]"
     />
 
     <MainComp 
-    class=""
+    :class="[store.textSize === 'lg'?'text-[16px]':'',
+    store.textSize === 'md'?'text-[12px]':'',
+    store.textSize === 'sm'?'text-[8px]':'',
+    ]"
     />
 
     <FooterComp 
-    class=""
+    :class="[store.textSize === 'lg'?'text-[16px]':'',
+    store.textSize === 'md'?'text-[12px]':'',
+    store.textSize === 'sm'?'text-[8px]':'',
+    ]"
     />
 
   </div>

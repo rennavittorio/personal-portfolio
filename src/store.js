@@ -66,6 +66,10 @@ const store = reactive({
         },
         
     ],
+
+    mode: 0,
+
+    textSize: 'lg',
     
 })
 
