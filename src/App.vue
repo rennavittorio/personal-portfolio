@@ -60,7 +60,7 @@ export default {
 }
 
 .page-site * {
-  border: 2px dashed darksalmon;
+  /* border: 2px dashed darksalmon; */
 }
 
 

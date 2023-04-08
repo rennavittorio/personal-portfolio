@@ -11,7 +11,7 @@ export default defineComponent({
     data(){
         return {
             profileName: 'vittorio renna',
-            roles: ['{ web }', '{ people }'],
+            roles: ['web', 'people'],
             rolesCounter: 1,
         }
     },
@@ -21,15 +21,18 @@ export default defineComponent({
                 if(this.rolesCounter === 1){
                     this.rolesCounter = 0;
                     // console.log(this.roles[this.rolesCounter]);
-                } else {
+                } else if(this.rolesCounter === 0) {
                     this.rolesCounter = 1;
                     // console.log(this.roles[this.rolesCounter]);
-                }
-            }, 8000)
+                } 
+                // else if(this.rolesCounter === 1){
+                //     this.rolesCounter = 2;
+                // }
+            }, 4000)
         }
     },
     mounted(){
-        // this.setRoles();
+        this.setRoles();
         //stopped for now
     }
 })
@@ -47,7 +50,7 @@ export default defineComponent({
         </h1>
         <h1 class="my-roles flex justify-start items-center flex-wrap">
             <!-- <span class="shrink-0"></span>i'm a  -->
-            <span class="dev-animation flicker"><strong>{{ roles[rolesCounter] }}</strong></span> 
+            {<span class="dev-animation flicker"><strong> {{ roles[rolesCounter] }} </strong></span>}
             <span class="">developer</span>
         </h1>
     </header>
@@ -64,19 +67,19 @@ export default defineComponent({
 .dev-animation {
     overflow: hidden; 
     white-space: nowrap; 
-    margin: 0 5px; 
+    margin: 0 5px;
     letter-spacing: .01em; 
-    /* animation: 
-        typing 8s steps(5, end) infinite,
-        blink-caret 1s step-end infinite; */
+    animation: 
+        typing 4s steps(60, end) infinite alternate
+        /* blink-caret 1s step-end infinite; */
     /* stopped for now  */
 }
 
-.flicker {
+/* .flicker {
     border-right: 3px solid #2f2f2f;
     padding-right: 2px;
     margin: 0 5px;
-}
+} */
 
 /* The typing effect */
 @keyframes typing {
@@ -85,6 +88,12 @@ export default defineComponent({
     }
     25% { 
         width: auto; 
+    }
+    75% { 
+        width: auto; 
+    }
+    100% {
+        width: 0;
     }
 }
 
