@@ -41,18 +41,15 @@ export default defineComponent({
 
 <template>
 
-    <header class="header text-xl mb-3">
-        <div class="container">
-            <h1 class="my-name">
-                hi, i'm <strong>{{ profileName }}</strong>
-            </h1>
-            <h1 class="my-roles flex justify-start items-center">
-                <span class="shrink-0"></span>i'm a 
-                <span class="dev-animation flicker"><strong>{{ roles[rolesCounter] }}</strong></span> 
-                <span class="">developer</span>
-            </h1>
-
-        </div>
+    <header class="header container text-xl mb-3">
+        <h1 class="my-name">
+            hi, i'm <strong>{{ profileName }}</strong>
+        </h1>
+        <h1 class="my-roles flex justify-start items-center">
+            <span class="shrink-0"></span>i'm a 
+            <span class="dev-animation flicker"><strong>{{ roles[rolesCounter] }}</strong></span> 
+            <span class="">developer</span>
+        </h1>
     </header>
 
 </template>

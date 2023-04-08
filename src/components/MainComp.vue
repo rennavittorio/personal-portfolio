@@ -47,13 +47,59 @@ export default defineComponent({
             :class="['item__function', 'p-1',
             (activeIndex === i) && (isActive) ? 'active' : '',
             (activeIndex === i) && (isActive) ? 'mb-auto' : '',]">
-                <div class="item__title hover:underline hover:cursor-pointer">
+                <div class="item__title hover:underline hover:cursor-pointer hover:text-main-hv">
                     {{ item.title }}
                 </div>
                 <div 
-                :class="['content', 'p-2', (activeIndex === i) && (isActive) ? 'block' : 'hidden']">
-                    content here...
+                :class="['content-wrapper', 'p-2', (activeIndex === i) && (isActive) ? 'block' : 'hidden']">
+                    <div 
+                    class="content-show"
+                    v-if="activeIndex === 0"
+                    >
+                        <ul class="content__list">
+                            <li
+                            v-for="option in store.functionMenu[activeIndex].content"
+                            class="content__item p-3"
+                            >
+                                let <strong>{{ option.category }}</strong>: {{ option.languages }}
+                            </li>
+                        </ul>
+                    </div>
+                    <div 
+                    class="content-show"
+                    v-else-if="activeIndex === 1"
+                    >
+                        <ul class="content__list">
+                            <li
+                            v-for="option in store.functionMenu[activeIndex].content"
+                            class="content__item p-3"
+                            >
+                                const { 
+                                {{ option.category }}, 
+                                <a class="underline hover:text-main-hv hover:cursor-pointer" :href="option.websiteLink">website</a>, 
+                                <a class="underline hover:text-main-hv hover:cursor-pointer" :href="option.githubLink">github</a>  
+                                } = <strong>{{ option.projName }}</strong>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div 
+                    class="content-show"
+                    v-else-if="activeIndex === 2"
+                    >
+                        <ul class="content__list">
+                            <li
+                            v-for="option in store.functionMenu[activeIndex].content"
+                            class="content__item p-3"
+                            >
+                                <a 
+                                class="hover:underline hover:text-main-hv hover:cursor-pointer"
+                                :href="option.link">{{ option.funcName }}</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+
             </li>
         </ul>
 

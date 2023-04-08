@@ -24,19 +24,19 @@ const store = reactive({
             title: 'seeMyProjects()',
             content: [
                 {
-                    projName: 'frontend',
+                    projName: 'proj_name_1',
                     category: 'contribution',
                     websiteLink: '#',
                     githubLink: '#'
                 },
                 {
-                    projName: 'frontend',
+                    projName: 'proj_name_2',
                     category: 'contribution',
                     websiteLink: '#',
                     githubLink: '#'
                 },
                 {
-                    projName: 'frontend',
+                    projName: 'proj_name_3',
                     category: 'contribution',
                     websiteLink: '#',
                     githubLink: '#'
@@ -47,7 +47,7 @@ const store = reactive({
             title: 'getInTouch()',
             content: [
                 {
-                    funcName: '@click="sendMain"',
+                    funcName: '@click="sendMail"',
                     link: '#'
                 },
                 {
