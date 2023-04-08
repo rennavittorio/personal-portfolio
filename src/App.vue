@@ -8,7 +8,7 @@ export default {
   components: {
     HeaderComp,
     MainComp,
-    FooterComp,
+    FooterComp
   }
 }
 
@@ -28,7 +28,7 @@ export default {
     />
 
     <FooterComp 
-    class="mt-auto"
+    class=""
     />
 
   </div>
@@ -41,6 +41,10 @@ export default {
   width: 100vw;
   height: 100vh;
   padding: 10px;
+}
+
+.page-site * {
+  border: 2px dashed darksalmon;
 }
 
 

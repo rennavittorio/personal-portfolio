@@ -20,7 +20,7 @@ export default defineComponent ({
 <template>
 
 
-    <footer class="footer p-3">
+    <footer class="footer p-1">
         footer here...
     </footer>
 
