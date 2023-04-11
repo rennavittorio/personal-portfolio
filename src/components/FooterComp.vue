@@ -40,8 +40,8 @@ export default defineComponent ({
 
 
     <footer class="footer container p-1">
-        <div class="footer-wrapper flex justify-between items-end">
-          <div class="btn-wrapper flex flex-col gap-1">
+        <div class="footer-wrapper flex justify-between items-end gap-3">
+          <div class="btn-wrapper flex flex-wrap gap-1">
             <div 
             @click="toggleText()"
             :class="['btn',
@@ -61,7 +61,7 @@ export default defineComponent ({
               <span v-else-if="store.mode === 1">bg-dark</span>
             </div>
           </div>
-          <div class="links-wrapper flex flex-col gap-1">
+          <div class="links-wrapper flex flex-wrap gap-1">
             <a href="#">
               //github
             </a>
