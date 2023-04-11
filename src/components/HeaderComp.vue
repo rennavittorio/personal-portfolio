@@ -32,7 +32,7 @@ export default defineComponent({
         }
     },
     mounted(){
-        this.setRoles();
+        // this.setRoles();
         //stopped for now
     }
 })
@@ -44,7 +44,7 @@ export default defineComponent({
 
 <template>
 
-    <header class="header container text-xl mb-3">
+    <header class="header container mb-3">
         <h1 class="my-name">
             hi, i'm <strong>{{ profileName }}</strong>
         </h1>
@@ -69,8 +69,8 @@ export default defineComponent({
     white-space: nowrap; 
     margin: 0 5px;
     letter-spacing: .01em; 
-    animation: 
-        typing 4s steps(60, end) infinite alternate
+    /* animation: 
+        typing 4s steps(60, end) infinite alternate */
         /* blink-caret 1s step-end infinite; */
     /* stopped for now  */
 }

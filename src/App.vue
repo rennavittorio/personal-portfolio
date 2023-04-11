@@ -25,11 +25,13 @@ export default {
   <div :class="['page-site', 'font-cascadia', 
   store.mode===0?['bg-main-bg-light', 'text-main-tx-light']:['bg-main-bg-dark', 'text-main-tx-dark'], 'tracking-tigher',
   'flex', 'flex-col']">
-      
+
+
+
     <HeaderComp 
-    :class="[store.textSize === 'lg'?'text-[20px]':'',
-    store.textSize === 'md'?'text-[16px]':'',
-    store.textSize === 'sm'?'text-[12px]':'',
+    :class="[store.textSize === 'lg'?'text-[24px]':'',
+    store.textSize === 'md'?'text-[20px]':'',
+    store.textSize === 'sm'?'text-[16px]':'',
     ]"
     />
 
@@ -47,6 +49,9 @@ export default {
     ]"
     />
 
+
+      
+
   </div>
 
   
@@ -57,6 +62,7 @@ export default {
   width: 100vw;
   height: 100vh;
   padding: 10px;
+  border: 1px solid #2f2f2f;
 }
 
 .page-site * {

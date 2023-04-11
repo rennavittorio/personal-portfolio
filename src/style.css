@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.container {
+    max-width: 500px;
+}
+
+.container:not(:last-child){
+    border: 1px solid transparent;
+    border-color: transparent transparent #2f2f2f transparent;
+    padding-bottom: 10px;
+}
