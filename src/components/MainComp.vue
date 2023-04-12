@@ -54,8 +54,11 @@ export default defineComponent({
             :class="['item__function', 'p-1',
             (activeIndex === i) && (isActive) ? 'active' : '',
             (activeIndex === i) && (isActive) ? 'mb-auto' : '',]">
-                <div class="item__title hover:underline hover:cursor-pointer hover:text-main-hv">
+                <div class="item__title hover:cursor-pointer">
                     {{ item.title }}
+                    <span class="hover__main-title">
+                        {{ item.title }}
+                    </span>
                 </div>
                 <div 
                 :class="['content-wrapper', 'p-2', (activeIndex === i) && (isActive) ? 'block' : 'hidden']">
@@ -155,6 +158,30 @@ export default defineComponent({
     text-decoration: underline;
 }
 
+.item__title {
+    position: relative;
+
+}
+
+.hover__main-title {
+    position: absolute;
+    color: currentColor;
+    left: 0;
+    font-style: normal;
+    /* animation: tilt 3s linear infinite; */
+}
+
+.item__title:hover .hover__main-title{
+    color: blue;
+    left: 1px;
+    top: 1px;
+}
+
+@keyframes tilt {
+    50%{
+        font-style: italic;
+    }
+}
 
 
 </style>
