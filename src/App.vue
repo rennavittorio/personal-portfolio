@@ -22,30 +22,30 @@ export default {
 
 <template>
 
-  <div :class="['page-site', 'font-cascadia', 
-  store.mode===0?['bg-main-bg-light', 'text-main-tx-light']:['bg-main-bg-dark', 'text-main-tx-dark'], 'tracking-tigher',
+  <div :class="['page-site', 'font-vt323', 
+  store.mode===0?['bg-main-bg-light', 'text-main-tx-light']:['bg-main-bg-dark', 'text-main-tx-dark'], 
   'flex', 'flex-col']">
 
 
 
     <HeaderComp 
-    :class="[store.textSize === 'lg'?'text-[24px]':'',
-    store.textSize === 'md'?'text-[20px]':'',
-    store.textSize === 'sm'?'text-[16px]':'',
+    :class="[store.textSize === 'lg'?'text-[30px]':'',
+    store.textSize === 'md'?'text-[26px]':'',
+    store.textSize === 'sm'?'text-[22px]':'',
     ]"
     />
 
     <MainComp 
-    :class="[store.textSize === 'lg'?'text-[16px]':'',
-    store.textSize === 'md'?'text-[12px]':'',
-    store.textSize === 'sm'?'text-[8px]':'',
+    :class="[store.textSize === 'lg'?'text-[22px]':'',
+    store.textSize === 'md'?'text-[18px]':'',
+    store.textSize === 'sm'?'text-[14px]':'',
     ]"
     />
 
     <FooterComp 
-    :class="[store.textSize === 'lg'?'text-[16px]':'',
-    store.textSize === 'md'?'text-[12px]':'',
-    store.textSize === 'sm'?'text-[8px]':'',
+    :class="[store.textSize === 'lg'?'text-[22px]':'',
+    store.textSize === 'md'?'text-[18px]':'',
+    store.textSize === 'sm'?'text-[14px]':'',
     ]"
     />
 

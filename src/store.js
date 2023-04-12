@@ -64,10 +64,35 @@ const store = reactive({
                 },
             ]
         },
+        {
+            title: 'readRndFactsAboutMe()',
+            content: [
+                {
+                    fact: 'I love trekking and mountains',
+                    isReal: '#',
+                    href: '#'
+                },
+                {
+                    fact: 'I discovered that videogames can improve children\'s attention',
+                    isReal: '#',
+                    href: '#'
+                },
+                {
+                    fact: 'Sometimes I could say a bad joke, a very bad one and still laught at myself loudly',
+                    isReal: '#',
+                    href: '#'
+                },
+                {
+                    fact: 'Beer is better than wine, change my mind',
+                    isReal: '#',
+                    href: '#'
+                },
+            ]
+        },
         
     ],
 
-    mode: 0,
+    mode: 1,
 
     textSize: 'lg',
     

@@ -7,12 +7,14 @@ export default defineComponent({
         functionMenu: Array,
         activeIndex: Number,
         isActive: Boolean,
+        rndFact: String,
     },
     data(){
         return {
             store,
             activeIndex: 0,
             isActive: false,
+            rndFact: '',
         }
     },
     methods: {
@@ -27,6 +29,11 @@ export default defineComponent({
                 this.activeIndex = index;
                 this.isActive = true;
             }
+        },
+
+        getRndFact(){
+            let rndNum = Math.floor(Math.random() * this.store.functionMenu[3].content.length);
+            this.rndFact = this.store.functionMenu[3].content[rndNum].fact;
         }
     }
 })
@@ -38,9 +45,9 @@ export default defineComponent({
 
 <template>
 
-    <main class="container h-[100%] mb-3">
+    <main class="container h-[100%] mb-3 overflow-hidden">
 
-        <ul class="list__functions h-[100%] flex flex-col">
+        <ul class="list__functions h-[100%] flex flex-col overflow-y-auto">
             <li
             v-for="(item, i) in store.functionMenu"
             @click="toggleActive(i)"
@@ -61,7 +68,12 @@ export default defineComponent({
                             v-for="option in store.functionMenu[activeIndex].content"
                             class="content__item p-3"
                             >
-                                let <strong>{{ option.category }}</strong>: {{ option.languages }}
+                                let <span class="title__item">
+                                    {{ option.category }}
+                                    <!-- <span class="hover__item">
+                                        {{ option.category }}
+                                    </span> -->
+                                </span>: {{ option.languages }}
                             </li>
                         </ul>
                     </div>
@@ -94,9 +106,25 @@ export default defineComponent({
                             >
                                 <a 
                                 class="hover:underline hover:text-main-hv hover:cursor-pointer"
-                                :href="option.link">{{ option.funcName }}</a>
+                                :href="option.link" target="_blank">{{ option.funcName }}</a>
                             </li>
                         </ul>
+                    </div>
+
+
+                    <div 
+                    class="content-show"
+                    v-else-if="activeIndex === 3"
+                    >
+                        
+                        <h1 
+                        class="rnd-fact text-center p-10"
+                        >
+                            
+                           check 
+
+                        </h1>
+
                     </div>
                 </div>
 
@@ -126,6 +154,7 @@ export default defineComponent({
 .item__function.active .item__title {
     text-decoration: underline;
 }
+
 
 
 </style>

@@ -32,7 +32,7 @@ export default defineComponent({
         }
     },
     mounted(){
-        // this.setRoles();
+        this.setRoles();
         //stopped for now
     }
 })
@@ -46,12 +46,13 @@ export default defineComponent({
 
     <header class="header container mb-3">
         <h1 class="my-name">
-            hi, i'm <strong>{{ profileName }}</strong>
+            hi, i'm <strong class="myName">{{ profileName }}</strong>
         </h1>
+
         <h1 class="my-roles flex justify-start items-center flex-wrap">
             <!-- <span class="shrink-0"></span>i'm a  -->
             {<span class="dev-animation flicker"><strong> {{ roles[rolesCounter] }} </strong></span>}
-            <span class="">developer</span>
+            <span class=""> developer</span>
         </h1>
     </header>
 
@@ -64,13 +65,28 @@ export default defineComponent({
     /* border: 1px dashed red; */
 }
 
+.myName{
+    position: relative;
+    z-index: 1;
+}
+
+.myName:hover::after{
+    content: 'vittorio renna';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(1%, 25%);
+    color: blue;
+}
+
 .dev-animation {
     overflow: hidden; 
     white-space: nowrap; 
     margin: 0 5px;
     letter-spacing: .01em; 
-    /* animation: 
-        typing 4s steps(60, end) infinite alternate */
+    animation: 
+        typing 4s steps(60, end) infinite alternate
         /* blink-caret 1s step-end infinite; */
     /* stopped for now  */
 }

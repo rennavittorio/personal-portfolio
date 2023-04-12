@@ -62,10 +62,14 @@ export default defineComponent ({
             </div>
           </div>
           <div class="links-wrapper flex flex-wrap gap-1">
-            <a href="#">
+            <a href="https://github.com/rennavittorio" target="_blank"
+            class="hover:cursor-pointer hover:text-main-hv"
+            >
               //github
             </a>
-            <a href="#">
+            <a href="https://www.linkedin.com/in/rennavittorio/" target="_blank"
+            class="hover:cursor-pointer hover:text-main-hv"
+            >
               //linkedin
             </a>
           </div>
@@ -80,8 +84,8 @@ export default defineComponent ({
 <style scoped>
 .btn {
   border: 1px solid currentColor;
-  width: 100px;
-  height: 30px;
+  width: 120px;
+  height: 32px;
   padding: 2px;
   text-align: center;
   display: flex;
