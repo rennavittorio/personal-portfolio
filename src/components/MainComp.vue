@@ -69,9 +69,9 @@ export default defineComponent({
                             v-for="option in store.functionMenu[activeIndex].content"
                             class="content__item p-3"
                             >
-                                let <span class="title__item">
+                                let <strong class="title__item">
                                     {{ option.category }}
-                                </span>: {{ option.languages }}
+                                </strong> = {{ option.languages }}
                             </li>
                         </ul>
                     </div>
