@@ -23,7 +23,7 @@ export default {
 <template>
 
   <div :class="['page-site', 'font-roboto', 
-  store.mode===0?['bg-main-bg-light', 'text-main-tx-light']:['bg-main-bg-dark', 'text-main-tx-dark'], 
+  store.mode===0?'light-v':'dark-v', 
   'flex', 'flex-col']">
 
 
@@ -65,9 +65,18 @@ export default {
   border: 1px solid #2f2f2f;
 }
 
-.page-site * {
-  /* border: 2px dashed darksalmon; */
+.page-site.light-v {
+  background-color: #f2f2f2;
+  color: #2f2f2f;
+  position: relative;
 }
+
+.page-site.dark-v {
+  background-color: #262626;
+  color: #f2f2f2;
+  position: relative;
+}
+
 
 
 </style>

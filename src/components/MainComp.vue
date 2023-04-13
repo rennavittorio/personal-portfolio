@@ -45,7 +45,13 @@ export default defineComponent({
 
 <template>
 
-    <main class="container h-[100%] mb-3 overflow-hidden">
+    <main class="main container h-[100%] mb-3 overflow-hidden">
+
+        <div 
+        :class="['cube', store.mode===0?'light-v':'dark-v',]"
+        
+        >
+        </div>
 
         <ul class="list__functions h-[100%] flex flex-col overflow-y-auto">
             <li
@@ -169,6 +175,134 @@ export default defineComponent({
         font-style: italic;
     }
 }
+
+.main {
+    position: relative;
+}
+
+.cube.light-v {
+    /* content: ''; */
+    /* display: block; */
+
+    width: 25px;
+    height: 25px;
+    border-radius: 0;
+    background-color: #262626;
+
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    transform: rotate(0deg);
+
+    animation: rotating 4s linear infinite,
+    tilting 1s ease-in-out infinite;
+}
+
+.cube.dark-v {
+    /* content: ''; */
+    /* display: block; */
+
+    width: 25px;
+    height: 25px;
+    border-radius: 0;
+    background-color: #f2f2f2;
+
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    transform: rotate(0deg);
+
+    animation: rotating 4s linear infinite,
+    tilting 1s ease-in-out infinite;
+}
+
+.cube:hover {
+    cursor: pointer;
+    animation: rotating 0.5s linear infinite;
+    /* tilting 0.25s ease-in-out infinite, */
+    /* bigger 2s ease-in-out; */
+}
+
+@keyframes bigger {
+    0%{
+        width: 25px;
+        height: 25px;
+        border-radius: 0;
+    }
+    100%{
+        width: 75px;
+        height: 75px; 
+        border-radius: 999px;      
+    }
+}
+
+
+@keyframes rotating {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes tilting {
+    0%{
+        bottom: 10px;
+    }
+    50%{
+        bottom: 20px;
+    }
+    100%{
+        bottom: 10px;
+    }
+}
+
+/* @keyframes falling {
+    0%{
+        width: 50px;
+        height: 50px;   
+        right: 0;
+        top: 10px;
+        transform: rotate(0deg);
+    }
+    20%{
+        width: 0;
+        height: 0;
+        right: 0;
+        top: 90%;
+        transform: rotate(360deg);
+    }
+    40%{
+        width: 35px;
+        height: 35px;
+        right: 0;
+        top: 50%;
+        transform: rotate(0deg);
+    }
+    60%{
+        width: 0;
+        height: 0;
+        right: 0;
+        top: 90%;
+        transform: rotate(360deg);
+    }
+    80%{
+        width: 25px;
+        height: 25px;
+        right: 0;
+        top: 75%;
+        transform: rotate(0deg);
+    }
+    100%{
+        width: 0px;
+        height: 0px;
+        right: 0;
+        top: 90%;
+        transform: rotate(360deg);
+    }
+    
+} */
 
 
 
