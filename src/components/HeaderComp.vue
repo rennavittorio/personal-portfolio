@@ -11,23 +11,23 @@ export default defineComponent({
     data(){
         return {
             profileName: 'vittorio renna',
-            roles: ['web', 'people'],
+            roles: ['frontend', 'backend', 'people'],
             rolesCounter: 1,
         }
     },
     methods: {
         setRoles(){
             setInterval(()=>{
-                if(this.rolesCounter === 1){
-                    this.rolesCounter = 0;
-                    // console.log(this.roles[this.rolesCounter]);
-                } else if(this.rolesCounter === 0) {
+                if(this.rolesCounter === 0){
                     this.rolesCounter = 1;
                     // console.log(this.roles[this.rolesCounter]);
+                } else if(this.rolesCounter === 1) {
+                    this.rolesCounter = 2;
+                    // console.log(this.roles[this.rolesCounter]);
                 } 
-                // else if(this.rolesCounter === 1){
-                //     this.rolesCounter = 2;
-                // }
+                else if(this.rolesCounter === 2){
+                    this.rolesCounter = 0;
+                }
             }, 2000)
         }
     },

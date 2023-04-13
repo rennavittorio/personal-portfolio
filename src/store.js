@@ -15,7 +15,7 @@ const store = reactive({
                     languages: '[ php, mysql, laravel ]\;'
                 },
                 {
-                    category: 'human',
+                    category: 'people',
                     languages: '[ it-IT, en-EN, project-management, functional-analysis ]\;'
                 },
             ]
