@@ -19,6 +19,8 @@ export default {
       fontFamily: {
         'cascadia': ['Cascadia Code', 'sans-serif'],
         'vt323': ['VT323', 'monospace'],
+        'fire': ['Fire Sans', 'sans-serif'],
+        'roboto': ['Roboto', 'sans-serif'],
       }
     },
   },

@@ -28,7 +28,7 @@ export default defineComponent({
                 // else if(this.rolesCounter === 1){
                 //     this.rolesCounter = 2;
                 // }
-            }, 4000)
+            }, 2000)
         }
     },
     mounted(){
@@ -70,23 +70,13 @@ export default defineComponent({
     z-index: 1;
 }
 
-.myName:hover::after{
-    content: 'vittorio renna';
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transform: translate(1%, 25%);
-    color: blue;
-}
-
 .dev-animation {
     overflow: hidden; 
     white-space: nowrap; 
     margin: 0 5px;
     letter-spacing: .01em; 
-    animation: 
-        typing 4s steps(60, end) infinite alternate
+    /* animation: 
+        typing 4s steps(60, end) infinite alternate; */
         /* blink-caret 1s step-end infinite; */
     /* stopped for now  */
 }

@@ -22,7 +22,7 @@ export default {
 
 <template>
 
-  <div :class="['page-site', 'font-vt323', 
+  <div :class="['page-site', 'font-roboto', 
   store.mode===0?['bg-main-bg-light', 'text-main-tx-light']:['bg-main-bg-dark', 'text-main-tx-dark'], 
   'flex', 'flex-col']">
 

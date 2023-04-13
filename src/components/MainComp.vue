@@ -50,15 +50,13 @@ export default defineComponent({
         <ul class="list__functions h-[100%] flex flex-col overflow-y-auto">
             <li
             v-for="(item, i) in store.functionMenu"
-            @click="toggleActive(i)"
             :class="['item__function', 'p-1',
             (activeIndex === i) && (isActive) ? 'active' : '',
             (activeIndex === i) && (isActive) ? 'mb-auto' : '',]">
-                <div class="item__title hover:cursor-pointer">
+                <div 
+                @click="toggleActive(i)"
+                class="item__title hover:cursor-pointer hover:underline hover:text-main-hv">
                     {{ item.title }}
-                    <span class="hover__main-title">
-                        {{ item.title }}
-                    </span>
                 </div>
                 <div 
                 :class="['content-wrapper', 'p-2', (activeIndex === i) && (isActive) ? 'block' : 'hidden']">
@@ -73,9 +71,6 @@ export default defineComponent({
                             >
                                 let <span class="title__item">
                                     {{ option.category }}
-                                    <!-- <span class="hover__item">
-                                        {{ option.category }}
-                                    </span> -->
                                 </span>: {{ option.languages }}
                             </li>
                         </ul>
@@ -160,28 +155,21 @@ export default defineComponent({
 
 .item__title {
     position: relative;
+    width: fit-content;
+    font-style: italic;
+    /* animation: tilt 2s ease-in-out infinite; */
 
-}
-
-.hover__main-title {
-    position: absolute;
-    color: currentColor;
-    left: 0;
-    font-style: normal;
-    /* animation: tilt 3s linear infinite; */
-}
-
-.item__title:hover .hover__main-title{
-    color: blue;
-    left: 1px;
-    top: 1px;
 }
 
 @keyframes tilt {
-    50%{
+    0% {
+        font-style: normal;
+    }
+    90% {
         font-style: italic;
     }
 }
+
 
 
 </style>
