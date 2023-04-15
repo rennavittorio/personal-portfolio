@@ -22,7 +22,8 @@ export default {
 
 <template>
 
-  <div :class="['page-site', 'font-roboto', 
+
+  <div :class="['page-site', 'font-anonymous', 'tracking-tighter', 
   store.mode===0?'light-v':'dark-v', 
   'flex', 'flex-col']">
 
@@ -36,16 +37,16 @@ export default {
     />
 
     <MainComp 
-    :class="[store.textSize === 'lg'?'text-[22px]':'',
-    store.textSize === 'md'?'text-[18px]':'',
-    store.textSize === 'sm'?'text-[14px]':'',
+    :class="[store.textSize === 'lg'?'text-[20px]':'',
+    store.textSize === 'md'?'text-[16px]':'',
+    store.textSize === 'sm'?'text-[12px]':'',
     ]"
     />
 
     <FooterComp 
-    :class="[store.textSize === 'lg'?'text-[22px]':'',
-    store.textSize === 'md'?'text-[18px]':'',
-    store.textSize === 'sm'?'text-[14px]':'',
+    :class="[store.textSize === 'lg'?'text-[20px]':'',
+    store.textSize === 'md'?'text-[16px]':'',
+    store.textSize === 'sm'?'text-[12px]':'',
     ]"
     />
 
@@ -53,6 +54,9 @@ export default {
       
 
   </div>
+
+
+
 
   
 </template>
@@ -64,6 +68,7 @@ export default {
   padding: 10px;
   border: 1px solid #2f2f2f;
 }
+
 
 .page-site.light-v {
   background-color: #f2f2f2;

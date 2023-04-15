@@ -48,7 +48,7 @@ const store = reactive({
             content: [
                 {
                     funcName: '@click="sendMail"',
-                    link: '#'
+                    link: 'mailto:renna.vittorio@gmail.com'
                 },
                 {
                     funcName: '@click="chatOnDiscord"',
@@ -56,7 +56,7 @@ const store = reactive({
                 },
                 {
                     funcName: '@click="seeMyLinkedin"',
-                    link: '#'
+                    link: 'https://www.linkedin.com/in/rennavittorio/'
                 },
                 {
                     funcName: '@click="downloadMyCurriculum"',

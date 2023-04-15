@@ -40,7 +40,7 @@ export default defineComponent ({
 
 
     <footer class="footer container p-1">
-        <div class="footer-wrapper flex justify-between items-end gap-3">
+        <div class="footer-wrapper flex justify-between items-center gap-3">
           <div class="btn-wrapper flex flex-wrap gap-1">
             <div 
             @click="toggleText()"
@@ -61,7 +61,7 @@ export default defineComponent ({
               <span v-else-if="store.mode === 1">bg-dark</span>
             </div>
           </div>
-          <div class="links-wrapper flex flex-wrap gap-1">
+          <div class="links-wrapper flex flex-wrap gap-2">
             <a href="https://github.com/rennavittorio" target="_blank"
             class="hover:cursor-pointer hover:text-main-hv"
             >

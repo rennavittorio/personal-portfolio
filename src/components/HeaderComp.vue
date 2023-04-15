@@ -51,7 +51,7 @@ export default defineComponent({
 
         <h1 class="my-roles flex justify-start items-center flex-wrap">
             <!-- <span class="shrink-0"></span>i'm a  -->
-            <span class="dev-animation flicker"><strong>{ {{ roles[rolesCounter] }} }</strong></span>
+            {<span class="dev-animation flicker"><strong>{{ roles[rolesCounter] }}</strong></span>}
             <span class=""> developer</span>
         </h1>
     </header>

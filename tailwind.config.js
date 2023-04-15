@@ -12,15 +12,18 @@ export default {
       colors: {
         'main-bg-light': '#F2F2F2',
         'main-tx-light': '#262626',
-        'main-hv': '#7f7f7f',
+        'main-hv': '#00ff00',
         'main-bg-dark': '#262626',
         'main-tx-dark': '#f2f2f2'
       },
       fontFamily: {
         'cascadia': ['Cascadia Code', 'sans-serif'],
-        'vt323': ['VT323', 'monospace'],
         'fire': ['Fire Sans', 'sans-serif'],
         'roboto': ['Roboto', 'sans-serif'],
+        'vt323': ['VT323', 'monospace'],
+        'anonymous': ['Anonymous Pro', 'monospace'],
+        'ubuntu-mono': ['Ubuntu Mono', 'monospace'],
+        'roboto-mono': ['Roboto Mono', 'monospace'],
       }
     },
   },
