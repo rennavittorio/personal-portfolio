@@ -52,7 +52,7 @@ const store = reactive({
                 },
                 {
                     funcName: '@click="chatOnDiscord"',
-                    link: '#'
+                    link: 'https://discordapp.com/users/reindev#0832'
                 },
                 {
                     funcName: '@click="seeMyLinkedin"',
@@ -60,7 +60,7 @@ const store = reactive({
                 },
                 {
                     funcName: '@click="downloadMyCurriculum"',
-                    link: '#'
+                    link: '/vittorio_renna_cv_v0.2.pdf'
                 },
             ]
         },

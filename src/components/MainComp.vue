@@ -34,7 +34,8 @@ export default defineComponent({
         getRndFact(){
             let rndNum = Math.floor(Math.random() * this.store.functionMenu[3].content.length);
             this.rndFact = this.store.functionMenu[3].content[rndNum].fact;
-        }
+        },
+
     }
 })
 
@@ -109,6 +110,12 @@ export default defineComponent({
                             class="content__item p-3"
                             >
                                 <a 
+                                v-if="option.funcName == 'downloadMyCurriculum'" 
+                                class="hover:underline hover:text-main-hv hover:cursor-pointer"
+                                :href="option.link" target="_blank" download>{{ option.funcName }}</a>
+
+                                <a 
+                                v-else
                                 class="hover:underline hover:text-main-hv hover:cursor-pointer"
                                 :href="option.link" target="_blank">{{ option.funcName }}</a>
                             </li>
