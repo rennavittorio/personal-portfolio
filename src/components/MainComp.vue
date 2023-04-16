@@ -225,6 +225,7 @@ export default defineComponent({
 
 .cube:hover {
     cursor: pointer;
+    background-color: #00ff00;
     animation: rotating 0.5s linear infinite;
     /* tilting 0.25s ease-in-out infinite, */
     /* bigger 2s ease-in-out; */
