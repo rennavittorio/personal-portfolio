@@ -8,13 +8,18 @@ export default defineComponent({
         activeIndex: Number,
         isActive: Boolean,
         rndFact: String,
+        rndNUm: Number,
+        previousNum: Number,
     },
     data(){
         return {
             store,
             activeIndex: 0,
             isActive: false,
+
             rndFact: '',
+            rndNum: 0,
+            previousNum: 0,
         }
     },
     methods: {
@@ -32,8 +37,12 @@ export default defineComponent({
         },
 
         getRndFact(){
-            let rndNum = Math.floor(Math.random() * this.store.functionMenu[3].content.length);
-            this.rndFact = this.store.functionMenu[3].content[rndNum].fact;
+            do {
+                this.rndNum = Math.floor(Math.random() * this.store.functionMenu[3].content.length);
+            } while(this.rndNum === this.previousNum);
+            this.previousNum = this.rndNum;
+            this.rndFact = this.store.functionMenu[3].content[this.rndNum].fact;
+            return this.rndFact;
         },
 
     }
@@ -128,13 +137,21 @@ export default defineComponent({
                     v-else-if="activeIndex === 3"
                     >
                         
-                        <h1 
-                        class="rnd-fact text-center p-10"
+                        <div 
+                        class="rnd-fact text-center p-10 flex flex-col justify-center items-center"
                         >
                             
-                           check 
+                            <q class="mb-3">
+                                {{ getRndFact() }}
+                            </q>
 
-                        </h1>
+                            <button 
+                            class="italic hover:underline hover:text-main-hv"
+                            @click="getRndFact()">
+                                getAnotherOne()
+                            </button>
+
+                        </div>
 
                     </div>
                 </div>
