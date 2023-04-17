@@ -98,8 +98,8 @@ export default defineComponent({
                             class="content__item p-3"
                             >
                                 let <strong class="title__item">
-                                    {{ (option as unknown as Option).category }}
-                                </strong> = {{ (option as unknown as Option).languages }}
+                                    {{ (option as Option).category }}
+                                </strong> = {{ (option as Option).languages }}
                             </li>
                         </ul>
                     </div>
@@ -113,12 +113,12 @@ export default defineComponent({
                             class="content__item p-3"
                             >
                                 const { 
-                                {{ (option as unknown as Option).category }}
-                                <span v-if="(option as unknown as Option).websiteLink !== '#' || (option as unknown as Option).githubLink !== '#'">, </span>
-                                <a v-if="(option as unknown as Option).websiteLink !== '#'" class="underline hover:text-main-hv hover:cursor-pointer" :href="(option as unknown as Option).websiteLink" target="_blank">website</a>
-                                <span v-if="(option as unknown as Option).websiteLink !== '#' && (option as unknown as Option).githubLink !== '#'">, </span>
-                                <a v-if="(option as unknown as Option).githubLink !== '#'" class="underline hover:text-main-hv hover:cursor-pointer" :href="(option as unknown as Option).githubLink" target="_blank">github</a>
-                                } = <strong>{{ (option as unknown as Option).projName }}</strong>
+                                {{ (option as Option).category }}
+                                <span v-if="(option as Option).websiteLink !== '#' || (option as Option).githubLink !== '#'">, </span>
+                                <a v-if="(option as Option).websiteLink !== '#'" class="underline hover:text-main-hv hover:cursor-pointer" :href="(option as Option).websiteLink" target="_blank">website</a>
+                                <span v-if="(option as Option).websiteLink !== '#' && (option as Option).githubLink !== '#'">, </span>
+                                <a v-if="(option as Option).githubLink !== '#'" class="underline hover:text-main-hv hover:cursor-pointer" :href="(option as Option).githubLink" target="_blank">github</a>
+                                } = <strong>{{ (option as Option).projName }}</strong>
                             </li>
                         </ul>
                     </div>
@@ -133,14 +133,14 @@ export default defineComponent({
                             class="content__item p-3"
                             >
                                 <a 
-                                v-if="(option as unknown as Option).funcName == 'downloadMyCurriculum'" 
+                                v-if="(option as Option).funcName == 'downloadMyCurriculum'" 
                                 class="hover:underline hover:text-main-hv hover:cursor-pointer"
-                                :href="(option as unknown as Option).link" target="_blank" download>{{ (option as unknown as Option).funcName }}</a>
+                                :href="(option as Option).link" target="_blank" download>{{ (option as Option).funcName }}</a>
 
                                 <a 
                                 v-else
                                 class="hover:underline hover:text-main-hv hover:cursor-pointer"
-                                :href="(option as unknown as Option).link" target="_blank">{{ (option as unknown as Option).funcName }}</a>
+                                :href="(option as Option).link" target="_blank">{{ (option as Option).funcName }}</a>
                             </li>
                         </ul>
                     </div>
