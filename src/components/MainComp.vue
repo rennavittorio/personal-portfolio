@@ -54,7 +54,7 @@ export default defineComponent({
             this.rndNum = Math.floor(Math.random() * this.store.functionMenu[3].content.length);
             // this.previousNum = this.rndNum;
             this.rndFact = (this.store.functionMenu[3].content[this.rndNum] as Option).fact;
-            // return this.rndFact;
+            return this.rndFact;
         },
 
     }
@@ -152,12 +152,13 @@ export default defineComponent({
                     >
                         
                         <button 
-                        class="mb-5 italic hover:underline hover:text-main-hv">
+                        class="mb-5 italic hover:underline hover:text-main-hv"
+                        @click="getRndFact()">
                             getAnotherOne()
                         </button>
                         
                         <q class="">
-                            {{ rndFact }}
+                            {{ getRndFact() }}
                         </q>
 
                     </div>
