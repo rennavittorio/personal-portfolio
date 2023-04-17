@@ -24,22 +24,28 @@ const store = reactive({
             title: 'seeMyProjects()',
             content: [
                 {
-                    projName: 'proj_name_1',
-                    category: 'contribution',
-                    websiteLink: 'ciao',
-                    githubLink: '#'
-                },
-                {
-                    projName: 'proj_name_2',
-                    category: 'contribution',
+                    projName: 'personal_portfolio',
+                    category: 'personal_project',
                     websiteLink: '#',
-                    githubLink: '#'
+                    githubLink: 'https://github.com/rennavittorio/personal-portfolio.git'
                 },
                 {
-                    projName: 'proj_name_3',
-                    category: 'contribution',
-                    websiteLink: 'ciao',
-                    githubLink: 'ciao'
+                    projName: 'food_blog_homepage',
+                    category: 'personal_project',
+                    websiteLink: '#',
+                    githubLink: 'https://github.com/rennavittorio/proj-html-vuejs.git'
+                },
+                {
+                    projName: 'whatsapp_reproduction',
+                    category: 'personal_project',
+                    websiteLink: '#',
+                    githubLink: 'https://github.com/rennavittorio/vue-boolzapp.git'
+                },
+                {
+                    projName: 'netflix_reproduction',
+                    category: 'personal_project',
+                    websiteLink: '#',
+                    githubLink: 'https://github.com/rennavittorio/vite-boolflix.git'
                 },
             ]
         },

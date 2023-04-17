@@ -103,9 +103,9 @@ export default defineComponent({
                                 const { 
                                 {{ option.category }}
                                 <span v-if="option.websiteLink !== '#' || option.githubLink !== '#'">, </span>
-                                <a v-if="option.websiteLink !== '#'" class="underline hover:text-main-hv hover:cursor-pointer" :href="option.websiteLink">website</a>
+                                <a v-if="option.websiteLink !== '#'" class="underline hover:text-main-hv hover:cursor-pointer" :href="option.websiteLink" target="_blank">website</a>
                                 <span v-if="option.websiteLink !== '#' && option.githubLink !== '#'">, </span>
-                                <a v-if="option.githubLink !== '#'" class="underline hover:text-main-hv hover:cursor-pointer" :href="option.githubLink">github</a>
+                                <a v-if="option.githubLink !== '#'" class="underline hover:text-main-hv hover:cursor-pointer" :href="option.githubLink" target="_blank">github</a>
                                 } = <strong>{{ option.projName }}</strong>
                             </li>
                         </ul>
