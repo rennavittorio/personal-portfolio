@@ -49,12 +49,12 @@ export default defineComponent({
         },
 
         getRndFact(){
-            do {
-                this.rndNum = Math.floor(Math.random() * this.store.functionMenu[3].content.length);
-            } while(this.rndNum === this.previousNum);
-            this.previousNum = this.rndNum;
+            // do {
+            // } while(this.rndNum === this.previousNum);
+            this.rndNum = Math.floor(Math.random() * this.store.functionMenu[3].content.length);
+            // this.previousNum = this.rndNum;
             this.rndFact = (this.store.functionMenu[3].content[this.rndNum] as Option).fact;
-            return this.rndFact;
+            // return this.rndFact;
         },
 
     }
@@ -152,13 +152,12 @@ export default defineComponent({
                     >
                         
                         <button 
-                        class="mb-5 italic hover:underline hover:text-main-hv"
-                        @click="getRndFact()">
+                        class="mb-5 italic hover:underline hover:text-main-hv">
                             getAnotherOne()
                         </button>
                         
                         <q class="">
-                            {{ getRndFact() }}
+                            {{ rndFact }}
                         </q>
 
                     </div>
