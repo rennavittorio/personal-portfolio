@@ -166,7 +166,7 @@ export default defineComponent({
                         </button>
                         
                         <q class="">
-                            {{ rndFact }}
+                            {{ rndFact }} 
                         </q>
 
                     </div>
