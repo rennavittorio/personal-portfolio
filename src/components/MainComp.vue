@@ -101,9 +101,11 @@ export default defineComponent({
                             class="content__item p-3"
                             >
                                 const { 
-                                {{ option.category }}, 
-                                <a class="underline hover:text-main-hv hover:cursor-pointer" :href="option.websiteLink">website</a>, 
-                                <a class="underline hover:text-main-hv hover:cursor-pointer" :href="option.githubLink">github</a>  
+                                {{ option.category }}
+                                <span v-if="option.websiteLink !== '#' || option.githubLink !== '#'">, </span>
+                                <a v-if="option.websiteLink !== '#'" class="underline hover:text-main-hv hover:cursor-pointer" :href="option.websiteLink">website</a>
+                                <span v-if="option.websiteLink !== '#' && option.githubLink !== '#'">, </span>
+                                <a v-if="option.githubLink !== '#'" class="underline hover:text-main-hv hover:cursor-pointer" :href="option.githubLink">github</a>
                                 } = <strong>{{ option.projName }}</strong>
                             </li>
                         </ul>
@@ -133,25 +135,19 @@ export default defineComponent({
 
 
                     <div 
-                    class="content-show"
+                    class="content-show rnd-fact text-center p-10 flex flex-col justify-center items-center"
                     v-else-if="activeIndex === 3"
                     >
                         
-                        <div 
-                        class="rnd-fact text-center p-10 flex flex-col justify-center items-center"
-                        >
-                            
-                            <q class="mb-3">
-                                {{ getRndFact() }}
-                            </q>
-
-                            <button 
-                            class="italic hover:underline hover:text-main-hv"
-                            @click="getRndFact()">
-                                getAnotherOne()
-                            </button>
-
-                        </div>
+                        <button 
+                        class="mb-5 italic hover:underline hover:text-main-hv"
+                        @click="getRndFact()">
+                            getAnotherOne()
+                        </button>
+                        
+                        <q class="">
+                            {{ getRndFact() }}
+                        </q>
 
                     </div>
                 </div>

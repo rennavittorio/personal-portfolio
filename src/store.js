@@ -26,7 +26,7 @@ const store = reactive({
                 {
                     projName: 'proj_name_1',
                     category: 'contribution',
-                    websiteLink: '#',
+                    websiteLink: 'ciao',
                     githubLink: '#'
                 },
                 {
@@ -38,8 +38,8 @@ const store = reactive({
                 {
                     projName: 'proj_name_3',
                     category: 'contribution',
-                    websiteLink: '#',
-                    githubLink: '#'
+                    websiteLink: 'ciao',
+                    githubLink: 'ciao'
                 },
             ]
         },
