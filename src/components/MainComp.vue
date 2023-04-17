@@ -1,15 +1,27 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
-import store from '../store.js';
+import store from '../store';
+
+interface Option { //da capire, compreso l'unknown
+    category: string,
+    languages: string,
+    websiteLink: string,
+    githubLink: string,
+    projName: string,
+    funcName: string,
+    link: string,
+    fact: string,
+}
 
 export default defineComponent({
     props: {
-        functionMenu: Array,
+        option: Array<Object>, //forse inutile
         activeIndex: Number,
         isActive: Boolean,
         rndFact: String,
         rndNUm: Number,
         previousNum: Number,
+        
     },
     data(){
         return {
@@ -41,7 +53,7 @@ export default defineComponent({
                 this.rndNum = Math.floor(Math.random() * this.store.functionMenu[3].content.length);
             } while(this.rndNum === this.previousNum);
             this.previousNum = this.rndNum;
-            this.rndFact = this.store.functionMenu[3].content[this.rndNum].fact;
+            this.rndFact = (this.store.functionMenu[3].content[this.rndNum] as Option).fact;
             return this.rndFact;
         },
 
@@ -86,8 +98,8 @@ export default defineComponent({
                             class="content__item p-3"
                             >
                                 let <strong class="title__item">
-                                    {{ option.category }}
-                                </strong> = {{ option.languages }}
+                                    {{ (option as unknown as Option).category }}
+                                </strong> = {{ (option as unknown as Option).languages }}
                             </li>
                         </ul>
                     </div>
@@ -101,12 +113,12 @@ export default defineComponent({
                             class="content__item p-3"
                             >
                                 const { 
-                                {{ option.category }}
-                                <span v-if="option.websiteLink !== '#' || option.githubLink !== '#'">, </span>
-                                <a v-if="option.websiteLink !== '#'" class="underline hover:text-main-hv hover:cursor-pointer" :href="option.websiteLink" target="_blank">website</a>
-                                <span v-if="option.websiteLink !== '#' && option.githubLink !== '#'">, </span>
-                                <a v-if="option.githubLink !== '#'" class="underline hover:text-main-hv hover:cursor-pointer" :href="option.githubLink" target="_blank">github</a>
-                                } = <strong>{{ option.projName }}</strong>
+                                {{ (option as unknown as Option).category }}
+                                <span v-if="(option as unknown as Option).websiteLink !== '#' || (option as unknown as Option).githubLink !== '#'">, </span>
+                                <a v-if="(option as unknown as Option).websiteLink !== '#'" class="underline hover:text-main-hv hover:cursor-pointer" :href="(option as unknown as Option).websiteLink" target="_blank">website</a>
+                                <span v-if="(option as unknown as Option).websiteLink !== '#' && (option as unknown as Option).githubLink !== '#'">, </span>
+                                <a v-if="(option as unknown as Option).githubLink !== '#'" class="underline hover:text-main-hv hover:cursor-pointer" :href="(option as unknown as Option).githubLink" target="_blank">github</a>
+                                } = <strong>{{ (option as unknown as Option).projName }}</strong>
                             </li>
                         </ul>
                     </div>
@@ -121,14 +133,14 @@ export default defineComponent({
                             class="content__item p-3"
                             >
                                 <a 
-                                v-if="option.funcName == 'downloadMyCurriculum'" 
+                                v-if="(option as unknown as Option).funcName == 'downloadMyCurriculum'" 
                                 class="hover:underline hover:text-main-hv hover:cursor-pointer"
-                                :href="option.link" target="_blank" download>{{ option.funcName }}</a>
+                                :href="(option as unknown as Option).link" target="_blank" download>{{ (option as unknown as Option).funcName }}</a>
 
                                 <a 
                                 v-else
                                 class="hover:underline hover:text-main-hv hover:cursor-pointer"
-                                :href="option.link" target="_blank">{{ option.funcName }}</a>
+                                :href="(option as unknown as Option).link" target="_blank">{{ (option as unknown as Option).funcName }}</a>
                             </li>
                         </ul>
                     </div>

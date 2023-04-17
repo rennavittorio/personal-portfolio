@@ -61,9 +61,6 @@ export default defineComponent({
 
 
 <style scoped>
-.header {
-    /* border: 1px dashed red; */
-}
 
 .myName{
     position: relative;
