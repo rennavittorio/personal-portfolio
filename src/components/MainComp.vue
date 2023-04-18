@@ -18,7 +18,7 @@ export default defineComponent({
         option: Array<Object>, //forse inutile
         activeIndex: Number,
         isActive: Boolean,
-        rndFact: String,
+        showedFact: String,
         rndNUm: Number,
         previousNum: Number,
         
@@ -29,9 +29,10 @@ export default defineComponent({
             activeIndex: 0,
             isActive: false,
 
-            rndFact: '',
-            rndNum: 0,
-            previousNum: 0,
+            showedFact: 'I\'ve studied Neuroscience and discovered that videogames make children study better',
+            indexFact: 1,
+            // rndNum: 0,
+            // previousNum: 0,
         }
     },
     methods: {
@@ -48,21 +49,22 @@ export default defineComponent({
             }
         },
 
-        getRndFact(){
-            // do {
-            // } while(this.rndNum === this.previousNum);
-            this.rndNum = Math.floor(Math.random() * this.store.functionMenu[3].content.length);
-            // this.previousNum = this.rndNum;
-            this.rndFact = (this.store.functionMenu[3].content[this.rndNum] as Option).fact;
-            return this.rndFact;
-        },
+        // getRndFact(){
+        //     // do {
+        //     // } while(this.rndNum === this.previousNum);
+        //     this.rndNum = Math.floor(Math.random() * this.store.functionMenu[3].content.length);
+        //     // this.previousNum = this.rndNum;
+        //     this.rndFact = (this.store.functionMenu[3].content[this.rndNum] as Option).fact;
+        //     return this.rndFact;
+        // },
 
-        setRndFact(){
-            do {
-               this.rndNum = Math.floor(Math.random() * this.store.functionMenu[3].content.length);
-            } while(this.rndNum === this.previousNum);
-            this.previousNum = this.rndNum;
-            this.rndFact = (this.store.functionMenu[3].content[this.rndNum] as Option).fact;
+        setIndexFact(){
+            this.showedFact = (this.store.functionMenu[3].content[this.indexFact] as Option).fact;
+            if(this.indexFact < this.store.functionMenu[3].content.length - 1){
+                this.indexFact++;
+            } else {
+                this.indexFact = 0;
+            }
         },
 
     }
@@ -161,12 +163,12 @@ export default defineComponent({
                         
                         <button 
                         class="mb-5 italic hover:underline hover:text-main-hv"
-                        @click="setRndFact()">
-                            getOne()
+                        @click="setIndexFact()">
+                            getAnotherOne()
                         </button>
                         
                         <q class="">
-                            {{ rndFact }} 
+                            {{ showedFact }} 
                         </q>
 
                     </div>
