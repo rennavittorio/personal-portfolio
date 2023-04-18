@@ -64,7 +64,7 @@ export default {
 <style scoped>
 .page-site {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   padding: 10px;
   border: 1px solid #2f2f2f;
 }
