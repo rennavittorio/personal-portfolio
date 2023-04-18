@@ -49,15 +49,6 @@ export default defineComponent({
             }
         },
 
-        // getRndFact(){
-        //     // do {
-        //     // } while(this.rndNum === this.previousNum);
-        //     this.rndNum = Math.floor(Math.random() * this.store.functionMenu[3].content.length);
-        //     // this.previousNum = this.rndNum;
-        //     this.rndFact = (this.store.functionMenu[3].content[this.rndNum] as Option).fact;
-        //     return this.rndFact;
-        // },
-
         setIndexFact(){
             this.showedFact = (this.store.functionMenu[3].content[this.indexFact] as Option).fact;
             if(this.indexFact < this.store.functionMenu[3].content.length - 1){
