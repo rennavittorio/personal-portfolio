@@ -8,11 +8,11 @@ const store = reactive({
             content: [
                 {
                     category: 'frontend',
-                    languages: '[ html, css, javascript, vue3, vite, sass, bootstrap, tailwind ]\;'
+                    languages: '[ html-5, css-3, javascript, vue-3, vite, sass, bootstrap, tailwind ]\;'
                 },
                 {
                     category: 'backend',
-                    languages: '[ php, mysql, laravel ]\;'
+                    languages: '[ php-8, mysql, laravel-10 ]\;'
                 },
                 {
                     category: 'people',
@@ -64,14 +64,14 @@ const store = reactive({
                     funcName: '@click="seeMyLinkedin"',
                     link: 'https://www.linkedin.com/in/rennavittorio/'
                 },
-                {
-                    funcName: '@click="downloadMyCurriculum"',
-                    link: '/vittorio_renna_cv_v0.2.pdf'
-                },
+                // {
+                //     funcName: '@click="downloadMyCurriculum"',
+                //     link: '/vittorio_renna_cv_v0.2.pdf'
+                // },
             ]
         },
         {
-            title: 'readRndFactsAboutMe()',
+            title: 'readAboutMe()',
             content: [
                 {
                     fact: 'I\'ve studied Neuroscience and discovered that videogames make children study better',
