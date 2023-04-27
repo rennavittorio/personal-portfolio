@@ -113,8 +113,7 @@ export default defineComponent({
                             v-for="option in store.functionMenu[activeIndex].content"
                             class="content__item p-3"
                             >
-                                const { 
-                                {{ (option as Option).category }}
+                                const { <span>{{ (option as Option).category }}</span>
                                 <span v-if="(option as Option).websiteLink !== '#' || (option as Option).githubLink !== '#'">, </span>
                                 <a v-if="(option as Option).websiteLink !== '#'" class="underline hover:text-main-hv hover:cursor-pointer" :href="(option as Option).websiteLink" target="_blank">website</a>
                                 <span v-if="(option as Option).websiteLink !== '#' && (option as Option).githubLink !== '#'">, </span>
