@@ -12,7 +12,7 @@ export default {
       colors: {
         'main-bg-light': '#F2F2F2',
         'main-tx-light': '#262626',
-        'main-hv-light': '#2980B9',
+        'main-hv-light': '#0000ff',
         'main-bg-dark': '#262626',
         'main-tx-dark': '#f2f2f2',
         'main-hv-dark': '#00ff00',

@@ -259,7 +259,7 @@ export default defineComponent({
 
 .light-v.cube:hover {
     cursor: pointer;
-    background-color: #2980B9;
+    background-color: #0000ff;
     animation: rotating 0.5s linear infinite;
     /* tilting 0.25s ease-in-out infinite, */
     /* bigger 2s ease-in-out; */
