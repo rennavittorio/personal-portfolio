@@ -84,7 +84,8 @@ export default defineComponent({
             (activeIndex === i) && (isActive) ? 'mb-auto' : '',]">
                 <div 
                 @click="toggleActive(i)"
-                class="item__title hover:cursor-pointer hover:underline hover:text-main-hv">
+                :class="['item__title', 'hover:cursor-pointer', 'hover:underline', 
+                store.mode===0? 'hover:text-main-hv-light':'hover:text-main-hv-dark']">
                     {{ item.title }}
                 </div>
                 <div 
@@ -115,9 +116,9 @@ export default defineComponent({
                             >
                                 const { <span>{{ (option as Option).category }}</span>
                                 <span v-if="(option as Option).websiteLink !== '#' || (option as Option).githubLink !== '#'">, </span>
-                                <a v-if="(option as Option).websiteLink !== '#'" class="underline hover:text-main-hv hover:cursor-pointer" :href="(option as Option).websiteLink" target="_blank">website</a>
+                                <a v-if="(option as Option).websiteLink !== '#'" :class="['underline', store.mode===0? 'hover:text-main-hv-light':'hover:text-main-hv-dark', 'hover:cursor-pointer']" :href="(option as Option).websiteLink" target="_blank">website</a>
                                 <span v-if="(option as Option).websiteLink !== '#' && (option as Option).githubLink !== '#'">, </span>
-                                <a v-if="(option as Option).githubLink !== '#'" class="underline hover:text-main-hv hover:cursor-pointer" :href="(option as Option).githubLink" target="_blank">github</a>
+                                <a v-if="(option as Option).githubLink !== '#'" :class="['underline', store.mode===0? 'hover:text-main-hv-light':'hover:text-main-hv-dark', 'hover:cursor-pointer']" :href="(option as Option).githubLink" target="_blank">github</a>
                                 } = <strong>{{ (option as Option).projName }}</strong>
                             </li>
                         </ul>
@@ -134,12 +135,12 @@ export default defineComponent({
                             >
                                 <a 
                                 v-if="(option as Option).funcName == 'downloadMyCurriculum'" 
-                                class="hover:underline hover:text-main-hv hover:cursor-pointer"
+                                :class="['hover:underline', store.mode===0? 'hover:text-main-hv-light':'hover:text-main-hv-dark', 'hover:cursor-pointer']"
                                 :href="(option as Option).link" target="_blank" download>{{ (option as Option).funcName }}</a>
 
                                 <a 
                                 v-else
-                                class="hover:underline hover:text-main-hv hover:cursor-pointer"
+                                :class="['hover:underline', store.mode===0? 'hover:text-main-hv-light':'hover:text-main-hv-dark', 'hover:cursor-pointer']"
                                 :href="(option as Option).link" target="_blank">{{ (option as Option).funcName }}</a>
                             </li>
                         </ul>
@@ -152,7 +153,7 @@ export default defineComponent({
                     >
                         
                         <button 
-                        class="mb-5 italic hover:underline hover:text-main-hv"
+                        :class="['mb-5', 'italic', 'hover:underline', store.mode===0? 'hover:text-main-hv-light':'hover:text-main-hv-dark']"
                         @click="setIndexFact()">
                             getAnotherOne()
                         </button>
@@ -248,9 +249,17 @@ export default defineComponent({
     tilting 1s ease-in-out infinite;
 }
 
-.cube:hover {
+.dark-v.cube:hover {
     cursor: pointer;
     background-color: #00ff00;
+    animation: rotating 0.5s linear infinite;
+    /* tilting 0.25s ease-in-out infinite, */
+    /* bigger 2s ease-in-out; */
+}
+
+.light-v.cube:hover {
+    cursor: pointer;
+    background-color: #2980B9;
     animation: rotating 0.5s linear infinite;
     /* tilting 0.25s ease-in-out infinite, */
     /* bigger 2s ease-in-out; */
