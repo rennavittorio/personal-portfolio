@@ -61,7 +61,7 @@ const store = reactive({
                     link: 'https://discordapp.com/users/reindev#0832'
                 },
                 {
-                    funcName: '@click="seeMyLinkedin"',
+                    funcName: '@click="msgToLinkedin"',
                     link: 'https://www.linkedin.com/in/rennavittorio/'
                 },
                 // {
