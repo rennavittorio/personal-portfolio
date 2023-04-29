@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=VT323&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Roboto+Mono:wght@400;700&family=Ubuntu+Mono:wght@400;700&display=swap');
@@ -8,6 +7,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .hover-btn {
+        @apply hover:underline hover:cursor-pointer;
+    }
+}
 
 
 
@@ -28,7 +33,7 @@
 }
 
 
-.container:not(:last-child){
+.container:not(:last-child) {
     border: 1px solid transparent;
     border-color: transparent transparent #2f2f2f transparent;
     padding-bottom: 10px;

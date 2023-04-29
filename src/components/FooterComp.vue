@@ -47,7 +47,7 @@ export default defineComponent ({
             @click="toggleText()"
             :class="['btn',
             store.mode===0?'hover:text-main-hv-light':'hover:text-main-hv-dark',
-            'hover:cursor-pointer', 
+            'hover-btn', 
             store.mode===0?'border-main-tx-light':'border-main-tx-dark'
             ]">
               <span v-if="store.textSize === 'lg'">text-lg</span>
@@ -57,7 +57,7 @@ export default defineComponent ({
             <div 
             @click="toggleMode()"
             :class="['btn', 
-            store.mode===0?'hover:text-main-hv-light':'hover:text-main-hv-dark', 'hover:cursor-pointer', 
+            store.mode===0?'hover:text-main-hv-light':'hover:text-main-hv-dark', 'hover-btn', 
             store.mode===0?'border-main-tx-light':'border-main-tx-dark']">
               <span v-if="store.mode === 0">bg-light</span>
               <span v-else-if="store.mode === 1">bg-dark</span>
@@ -65,12 +65,12 @@ export default defineComponent ({
           </div>
           <div class="links-wrapper flex flex-wrap gap-2">
             <a href="https://github.com/rennavittorio" target="_blank"
-            :class="['hover:cursor-pointer', store.mode===0? 'hover:text-main-hv-light':'hover:text-main-hv-dark']"
+            :class="['hover-btn', store.mode===0? 'hover:text-main-hv-light':'hover:text-main-hv-dark']"
             >
               //github
             </a>
             <a href="https://www.linkedin.com/in/rennavittorio/" target="_blank"
-            :class="['hover:cursor-pointer', store.mode===0? 'hover:text-main-hv-light':'hover:text-main-hv-dark']"
+            :class="['hover-btn', store.mode===0? 'hover:text-main-hv-light':'hover:text-main-hv-dark']"
             >
               //linkedin
             </a>
