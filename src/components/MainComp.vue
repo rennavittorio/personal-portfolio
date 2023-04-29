@@ -18,6 +18,7 @@ export default defineComponent({
         option: Array<Object>, //maybe useless
         activeIndex: Number,
         isActive: Boolean,
+        isJumping: Boolean,
         showedFact: String,
         rndNUm: Number,
         previousNum: Number,
@@ -28,6 +29,8 @@ export default defineComponent({
             store,
             activeIndex: 0,
             isActive: false,
+
+            isJumping: false,
 
             showedFact: 'I\'ve studied Neuroscience and discovered that videogames make children study better',
             indexFact: 1,
@@ -53,6 +56,13 @@ export default defineComponent({
             }
         },
 
+        setIsJumping(){
+            this.isJumping = true;
+            setTimeout(()=>{
+                this.isJumping = false;
+            }, 3000);
+        }
+
     }
 })
 
@@ -64,7 +74,10 @@ export default defineComponent({
 <template>
     <main class="main container h-[100%] mb-3 overflow-hidden">
 
-        <div :class="['cube', store.mode === 0 ? 'light-v' : 'dark-v',]">
+        <div 
+        :class="['cube', 'hover-btn', isJumping ? 'is-jumping' : '', store.mode === 0 ? 'light-v' : 'dark-v',]"
+        @click="setIsJumping()"
+        >
         </div>
 
         <ul class="list__functions h-[100%] flex flex-col overflow-y-auto">
@@ -192,7 +205,7 @@ export default defineComponent({
         tilting 1s ease-in-out infinite;
 }
 
-.dark-v.cube:hover {
+/* .dark-v.cube:hover {
     cursor: pointer;
     background-color: #00ff00;
     animation: rotating 0.5s linear infinite;
@@ -202,6 +215,10 @@ export default defineComponent({
     cursor: pointer;
     background-color: #0000ff;
     animation: rotating 0.5s linear infinite;
+} */
+
+.is-jumping.cube {
+    animation: rotating 4s linear infinite, jumping 3s ease-in-out infinite;
 }
 
 @keyframes bigger {
@@ -240,6 +257,24 @@ export default defineComponent({
 
     100% {
         bottom: 10px;
+    }
+}
+
+@keyframes jumping {
+    0%{
+        bottom: 10px;
+    }
+    25%{
+        bottom: 100px;   
+    }
+    50%{
+        bottom: 10px;
+    }
+    75%{
+        bottom: 50px;
+    }
+    100%{
+        bottom: 10px;   
     }
 }
 
