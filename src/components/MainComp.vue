@@ -38,11 +38,8 @@ export default defineComponent({
     methods: {
         toggleActive(index: number){
             if(this.activeIndex === index){
-                if(this.isActive === false){
-                    this.isActive = true;
-                } else {
-                    this.isActive = false;
-                }
+                this.isActive === false ? this.isActive = true : this.isActive = false;
+
             } else if(this.activeIndex !== index){
                 this.activeIndex = index;
                 this.isActive = true;
