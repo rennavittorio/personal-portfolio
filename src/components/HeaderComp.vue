@@ -33,7 +33,6 @@ export default defineComponent({
     },
     mounted(){
         this.setRoles();
-        //stopped for now
     }
 })
 
@@ -46,7 +45,7 @@ export default defineComponent({
 
     <header class="header container mb-3">
         <h1 class="my-name">
-            hi, i'm <strong class="myName">{{ profileName }}</strong>
+            hi, i'm <strong class="my-name">{{ profileName }}</strong>
         </h1>
 
         <h1 class="my-roles flex justify-start items-center flex-wrap">
@@ -62,93 +61,9 @@ export default defineComponent({
 
 <style scoped>
 
-.myName{
+.my-name{
     position: relative;
     z-index: 1;
 }
-
-.dev-animation {
-    overflow: hidden; 
-    white-space: nowrap; 
-    margin: 0 5px;
-    letter-spacing: .01em; 
-    /* animation: 
-        typing 4s steps(60, end) infinite alternate; */
-        /* blink-caret 1s step-end infinite; */
-    /* stopped for now  */
-}
-
-/* .flicker {
-    border-right: 3px solid #2f2f2f;
-    padding-right: 2px;
-    margin: 0 5px;
-} */
-
-/* The typing effect */
-@keyframes typing {
-    0% { 
-        width: 0;
-    }
-    25% { 
-        width: auto; 
-    }
-    75% { 
-        width: auto; 
-    }
-    100% {
-        width: 0;
-    }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-    0% { 
-        border-color: transparent 
-    }
-    50% { 
-        border-color: #2f2f2f; 
-    }
-}
-
-
-/* .dev-after::after{
-    content: '';
-    display: block;
-    height: 20px;
-    padding: 2px;
-    background-color: #2f2f2f;
-    animation: flink 1.5s linear infinite;
-}
-
-.dev-animation{
-    white-space: nowrap;
-    overflow: hidden;
-    width: 4em;
-    animation: type 2s steps(5, end) infinite;
-}
-
-@keyframes type{ 
-    0% {
-        width: 0; 
-    } 
-    50% {
-        width: 4em;
-    }
-    100% {
-        width: 0;
-    }
-} 
-
-@keyframes flink {
-    0% {
-        background-color: transparent;
-    }
-    50% {
-        background-color: #2f2f2f;
-    }
-    100% {
-        background-color: transparent;
-    }
-} */
 
 </style>
