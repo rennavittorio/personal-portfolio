@@ -2,7 +2,7 @@
 import { defineComponent } from 'vue';
 import store from '../store';
 
-interface Option { //da capire, compreso l'unknown
+interface Option { //tb studied deeper
     category: string,
     languages: string,
     websiteLink: string,
@@ -15,7 +15,7 @@ interface Option { //da capire, compreso l'unknown
 
 export default defineComponent({
     props: {
-        option: Array<Object>, //forse inutile
+        option: Array<Object>, //maybe useless
         activeIndex: Number,
         isActive: Boolean,
         showedFact: String,
@@ -31,8 +31,6 @@ export default defineComponent({
 
             showedFact: 'I\'ve studied Neuroscience and discovered that videogames make children study better',
             indexFact: 1,
-            // rndNum: 0,
-            // previousNum: 0,
         }
     },
     methods: {
@@ -149,16 +147,6 @@ export default defineComponent({
 
 
 <style scoped>
-/* .item__function.active {
-    border: 1px solid #2f2f2f;
-    border-radius: 5px 5px 0 0;
-    border-color: #2f2f2f #2f2f2f transparent #2f2f2f;
-    text-decoration: underline;
-}
-
-.content {
-    border: 1px solid #2f2f2f;
-}  */
 
 .item__function.active .item__title {
     text-decoration: underline;
@@ -168,18 +156,6 @@ export default defineComponent({
     position: relative;
     width: fit-content;
     font-style: italic;
-    /* animation: tilt 2s ease-in-out infinite; */
-
-}
-
-@keyframes tilt {
-    0% {
-        font-style: normal;
-    }
-
-    90% {
-        font-style: italic;
-    }
 }
 
 .main {
@@ -187,9 +163,6 @@ export default defineComponent({
 }
 
 .cube.light-v {
-    /* content: ''; */
-    /* display: block; */
-
     width: 25px;
     height: 25px;
     border-radius: 0;
@@ -205,9 +178,6 @@ export default defineComponent({
 }
 
 .cube.dark-v {
-    /* content: ''; */
-    /* display: block; */
-
     width: 25px;
     height: 25px;
     border-radius: 0;
@@ -226,16 +196,12 @@ export default defineComponent({
     cursor: pointer;
     background-color: #00ff00;
     animation: rotating 0.5s linear infinite;
-    /* tilting 0.25s ease-in-out infinite, */
-    /* bigger 2s ease-in-out; */
 }
 
 .light-v.cube:hover {
     cursor: pointer;
     background-color: #0000ff;
     animation: rotating 0.5s linear infinite;
-    /* tilting 0.25s ease-in-out infinite, */
-    /* bigger 2s ease-in-out; */
 }
 
 @keyframes bigger {
@@ -277,49 +243,4 @@ export default defineComponent({
     }
 }
 
-/* @keyframes falling {
-    0%{
-        width: 50px;
-        height: 50px;   
-        right: 0;
-        top: 10px;
-        transform: rotate(0deg);
-    }
-    20%{
-        width: 0;
-        height: 0;
-        right: 0;
-        top: 90%;
-        transform: rotate(360deg);
-    }
-    40%{
-        width: 35px;
-        height: 35px;
-        right: 0;
-        top: 50%;
-        transform: rotate(0deg);
-    }
-    60%{
-        width: 0;
-        height: 0;
-        right: 0;
-        top: 90%;
-        transform: rotate(360deg);
-    }
-    80%{
-        width: 25px;
-        height: 25px;
-        right: 0;
-        top: 75%;
-        transform: rotate(0deg);
-    }
-    100%{
-        width: 0px;
-        height: 0px;
-        right: 0;
-        top: 90%;
-        transform: rotate(360deg);
-    }
-    
-} */
 </style>
