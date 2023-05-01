@@ -76,7 +76,7 @@ export default defineComponent({
 
         <div 
         :class="['cube', 'hover-btn', isJumping ? 'is-jumping' : '', store.mode === 0 ? 'light-v' : 'dark-v',]"
-        @click="setIsJumping()"
+        @click="setIsJumping"
         >
         </div>
 
@@ -88,8 +88,11 @@ export default defineComponent({
                         store.mode === 0 ? 'hover:text-main-hv-light' : 'hover:text-main-hv-dark', 'hover-btn']">
                     {{ item.title }}
                 </div>
+
                 <div :class="['content-wrapper', 'p-2', (activeIndex === i) && (isActive) ? 'block' : 'hidden']">
-                    <div class="content-show" v-if="activeIndex === 0">
+                    
+                    <!-- knowmystack section -->
+                    <div class="content-show" data-cy="know-my-stack" v-if="activeIndex === 0">
                         <ul class="content__list">
                             <li v-for="option in store.functionMenu[activeIndex].content" class="content__item p-3">
                                 let <strong class="title__item">
@@ -98,9 +101,11 @@ export default defineComponent({
                             </li>
                         </ul>
                     </div>
+
+                    <!-- seemyprojects section -->
                     <div class="content-show" v-else-if="activeIndex === 1">
                         <ul class="content__list">
-                            <li v-for="option in store.functionMenu[activeIndex].content" class="content__item p-3">
+                            <li v-for="option in store.functionMenu[activeIndex].content" class="content__item p-3" data-cy="see-my-projects-item">
                                 const { <span>{{ (option as Option).category }}</span>
                                 <span
                                     v-if="(option as Option).websiteLink !== '#' || (option as Option).githubLink !== '#'">,
@@ -119,9 +124,10 @@ export default defineComponent({
                         </ul>
                     </div>
 
+                    <!-- getintouch section -->
                     <div class="content-show" v-else-if="activeIndex === 2">
                         <ul class="content__list">
-                            <li v-for="option in store.functionMenu[activeIndex].content" class="content__item p-3">
+                            <li v-for="option in store.functionMenu[activeIndex].content" class="content__item p-3" data-cy="get-in-touch-item">
                                 <a v-if="(option as Option).funcName == 'downloadMyCurriculum'"
                                     :class="[store.mode === 0 ? 'hover:text-main-hv-light' : 'hover:text-main-hv-dark', 'hover-btn']"
                                     :href="(option as Option).link" target="_blank" download>{{ (option as Option).funcName
@@ -135,6 +141,7 @@ export default defineComponent({
                     </div>
 
 
+                    <!-- readaboutme section -->
                     <div class="content-show rnd-fact text-center p-10 flex flex-col justify-center items-center"
                         v-else-if="activeIndex === 3">
 
@@ -144,7 +151,7 @@ export default defineComponent({
                             getAnotherOne()
                         </button>
 
-                        <q class="">
+                        <q class="" data-cy="read-about-me-item">
                             {{ showedFact }}
                         </q>
 
